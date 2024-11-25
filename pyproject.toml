@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "near-agent"
+version = "0.1.0"
+description = "NEAR AI Agent built with LibertAI"
+authors = ["Reza Rahemtola <49811529+RezaRahemtola@users.noreply.github.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11, <3.12"
+libertai-agents = "0.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
