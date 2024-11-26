@@ -8,7 +8,10 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.11, <3.12"
-libertai-agents = "0.0.1"
+libertai-agents = "0.0.3"
+
+[tool.poetry.group.dev.dependencies]
+fastapi = { extras = ["standard"], version = "^0.115.5" }
 
 [build-system]
 requires = ["poetry-core"]

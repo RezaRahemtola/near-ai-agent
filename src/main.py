@@ -1,5 +1,6 @@
 from libertai_agents.agents import ChatAgent
 from libertai_agents.models import get_model
+from libertai_agents.models.models import ModelConfiguration
 
 
 async def get_current_temperature(location: str, unit: str) -> float:
@@ -15,7 +16,11 @@ async def get_current_temperature(location: str, unit: str) -> float:
     return 22.  # A real function should probably actually get the temperature!
 
 
-agent = ChatAgent(model=get_model("NousResearch/Hermes-3-Llama-3.1-8B"),
+agent = ChatAgent(model=get_model("NousResearch/Hermes-3-Llama-3.1-8B",
+                                  custom_configuration=ModelConfiguration(
+                                      vm_url="http://localhost:8080/completion",
+                                      context_length=16_000)
+                                  ),
                   system_prompt="You are a helpful assistant",
                   tools=[get_current_temperature])
 
