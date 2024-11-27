@@ -162,6 +162,20 @@ tests = ["cloudpickle", "hypothesis", "mypy (>=1.11.1)", "pympler", "pytest (>=4
 tests-mypy = ["mypy (>=1.11.1)", "pytest-mypy-plugins"]
 
 [[package]]
+name = "base58"
+version = "2.1.1"
+description = "Base58 and Base58Check implementation."
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "base58-2.1.1-py3-none-any.whl", hash = "sha256:11a36f4d3ce51dfc1043f3218591ac4eb1ceb172919cebe05b52a5bcc8d245c2"},
+    {file = "base58-2.1.1.tar.gz", hash = "sha256:c5d0cb3f5b6e81e8e35da5754388ddcc6d0d14b6c6a132cb93d69ed580a7278c"},
+]
+
+[package.extras]
+tests = ["PyHamcrest (>=2.0.2)", "mypy", "pytest (>=4.6)", "pytest-benchmark", "pytest-cov", "pytest-flake8"]
+
+[[package]]
 name = "certifi"
 version = "2024.8.30"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -330,6 +344,16 @@ doq = ["aioquic (>=1.0.0)"]
 idna = ["idna (>=3.7)"]
 trio = ["trio (>=0.23)"]
 wmi = ["wmi (>=1.5.1)"]
+
+[[package]]
+name = "ed25519"
+version = "1.5"
+description = "Ed25519 public-key signatures"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ed25519-1.5.tar.gz", hash = "sha256:02053ee019ceef0df97294be2d4d5a8fc120fc86e81e08bec1245fc0f9403358"},
+]
 
 [[package]]
 name = "email-validator"
@@ -635,13 +659,13 @@ test = ["Cython (>=0.29.24)"]
 
 [[package]]
 name = "httpx"
-version = "0.27.2"
+version = "0.26.0"
 description = "The next generation HTTP client."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "httpx-0.27.2-py3-none-any.whl", hash = "sha256:7bb2708e112d8fdd7829cd4243970f0c223274051cb35ee80c03301ee29a3df0"},
-    {file = "httpx-0.27.2.tar.gz", hash = "sha256:f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"},
+    {file = "httpx-0.26.0-py3-none-any.whl", hash = "sha256:8915f5a3627c4d47b73e8202457cb28f1266982d1159bd5779d86a80c0eab1cd"},
+    {file = "httpx-0.26.0.tar.gz", hash = "sha256:451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"},
 ]
 
 [package.dependencies]
@@ -656,7 +680,6 @@ brotli = ["brotli", "brotlicffi"]
 cli = ["click (==8.*)", "pygments (==2.*)", "rich (>=10,<14)"]
 http2 = ["h2 (>=3,<5)"]
 socks = ["socksio (==1.*)"]
-zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "huggingface-hub"
@@ -740,6 +763,24 @@ fastapi = ">=0.112,<1.0.0"
 jinja2 = ">=3.1.4,<4.0.0"
 pydantic = ">=1.10,<2.0"
 transformers = ">=4.46.0,<5.0.0"
+
+[[package]]
+name = "loguru"
+version = "0.7.2"
+description = "Python logging made (stupidly) simple"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "loguru-0.7.2-py3-none-any.whl", hash = "sha256:003d71e3d3ed35f0f8984898359d65b79e5b21943f78af86aa5491210429b8eb"},
+    {file = "loguru-0.7.2.tar.gz", hash = "sha256:e671a53522515f34fd406340ee968cb9ecafbc4b36c679da03c18fd8d0bd51ac"},
+]
+
+[package.dependencies]
+colorama = {version = ">=0.3.4", markers = "sys_platform == \"win32\""}
+win32-setctime = {version = ">=1.0.0", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+dev = ["Sphinx (==7.2.5)", "colorama (==0.4.5)", "colorama (==0.4.6)", "exceptiongroup (==1.1.3)", "freezegun (==1.1.0)", "freezegun (==1.2.2)", "mypy (==v0.910)", "mypy (==v0.971)", "mypy (==v1.4.1)", "mypy (==v1.5.1)", "pre-commit (==3.4.0)", "pytest (==6.1.2)", "pytest (==7.4.0)", "pytest-cov (==2.12.1)", "pytest-cov (==4.1.0)", "pytest-mypy-plugins (==1.9.3)", "pytest-mypy-plugins (==3.0.0)", "sphinx-autobuild (==2021.3.14)", "sphinx-rtd-theme (==1.3.0)", "tox (==3.27.1)", "tox (==4.11.0)"]
 
 [[package]]
 name = "markdown-it-py"
@@ -1127,6 +1168,36 @@ files = [
     {file = "propcache-0.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:9517d5e9e0731957468c29dbfd0f976736a0e55afaea843726e887f36fe017df"},
     {file = "propcache-0.2.0-py3-none-any.whl", hash = "sha256:2ccc28197af5313706511fab3a8b66dcd6da067a1331372c82ea1cb74285e036"},
     {file = "propcache-0.2.0.tar.gz", hash = "sha256:df81779732feb9d01e5d513fad0122efb3d53bbc75f61b2a4f29a020bc985e70"},
+]
+
+[[package]]
+name = "py-near"
+version = "1.1.50"
+description = "Pretty simple and fully asynchronous framework for working with NEAR blockchain"
+optional = false
+python-versions = "<4.0,>=3.7"
+files = [
+    {file = "py_near-1.1.50-py3-none-any.whl", hash = "sha256:15c645df231c854097bb181d971c2206d17f7fd0fdecd977d85c3392617083b9"},
+    {file = "py_near-1.1.50.tar.gz", hash = "sha256:0af21713131193037cf8ffeddd0c600013f7fb04f7be0d0e51830233349654fc"},
+]
+
+[package.dependencies]
+ed25519 = "1.5"
+httpx = "0.26.0"
+py-near-primitives = "0.2.3"
+
+[[package]]
+name = "py-near-primitives"
+version = "0.2.3"
+description = "Python bindings for NEAR Rust primitives."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "py_near_primitives-0.2.3-cp37-abi3-macosx_10_12_x86_64.whl", hash = "sha256:b28d57686a8100a918917379ebb031f10e4cfb347cbebc5a5687ff4ca64d41e7"},
+    {file = "py_near_primitives-0.2.3-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:a62ec144499df8d3ab7c7d732cce306af2a7a0a8bda3f2893b57d6b15e39122e"},
+    {file = "py_near_primitives-0.2.3-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:28768a0f11838d30e675e528785907b25a8ab60748aa18e061ab609d10c7ec20"},
+    {file = "py_near_primitives-0.2.3-cp37-abi3-win_amd64.whl", hash = "sha256:b346505c85e2ec14740aec68a7285365316c65d8ea187d395830f1919e2a4eda"},
+    {file = "py_near_primitives-0.2.3.tar.gz", hash = "sha256:41a36222190f7932fc169e7205f4d28837a63bc77c792f959c616fe885ff4ed0"},
 ]
 
 [[package]]
@@ -2104,6 +2175,20 @@ files = [
 ]
 
 [[package]]
+name = "win32-setctime"
+version = "1.1.0"
+description = "A small Python utility to set file creation time on Windows"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "win32_setctime-1.1.0-py3-none-any.whl", hash = "sha256:231db239e959c2fe7eb1d7dc129f11172354f98361c4fa2d6d2d7e278baa8aad"},
+    {file = "win32_setctime-1.1.0.tar.gz", hash = "sha256:15cf5750465118d6929ae4de4eb46e8edae9a5634350c01ba582df868e932cb2"},
+]
+
+[package.extras]
+dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
+
+[[package]]
 name = "yarl"
 version = "1.18.0"
 description = "Yet another URL library"
@@ -2202,4 +2287,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11, <3.12"
-content-hash = "1c06f4422afe608b4dc90ae5ced96f701f6f56e925f94ab688b556a15690504b"
+content-hash = "a8a6c4944cff0fd85d10aefbb1afb5af51dc73f620e2fecda59daa75a743e3fa"
